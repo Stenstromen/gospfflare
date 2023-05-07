@@ -4,7 +4,6 @@ Go binary for creating/updating MTA-STS records on Cloudflare.
 
 <br>
 
-# PLACEHOLDER
 ## Generate Cloudflare API Token
 1. Visit [https://dash.cloudflare.com/profile/api-tokens](https://dash.cloudflare.com/profile/api-tokens)
 2. Create Token
@@ -28,6 +27,14 @@ go build
 ## Example Usage
 ```
 - Usage examples
+
+- Create SPF Record
+export TOKEN="# Cloudflare API TOKEN"
+./gotlsaflare create -d example.com -4 127.0.0.1 -6 dead:beeef -i spf.domain.com -a -m -f
+
+- Update (overwrite) SPF Record
+export TOKEN="# Cloudflare API TOKEN"
+./gotlsaflare update -d example.com -4 127.0.0.3 -6 dead:beeef:2 -i spf2.domain.com -a -m -f
 
 Go binary for creating and updating SPF record on Cloudflare.
 

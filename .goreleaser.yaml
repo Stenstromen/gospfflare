@@ -1,0 +1,25 @@
+project_name: gospfflare
+builds:
+  - env: [CGO_ENABLED=0]
+    goos:
+      - linux
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+    binary: gospfflare
+archives:
+  - replacements:
+      darwin: Darwin
+      linux: Linux
+      amd64: x86_64
+brews:
+  - name: gospfflare
+    tap:
+      owner: stenstromen
+      name: homebrew-tap
+    commit_author:
+      name: stenstromen
+    folder: Formula
+    homepage: https://github.com/Stenstromen/gospfflare
+    description: Go binary for updating TLSA DANE record on cloudflare from x509 Certificate
